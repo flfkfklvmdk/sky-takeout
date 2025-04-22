@@ -24,6 +24,8 @@ import org.springframework.util.DigestUtils;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static org.springframework.http.ResponseEntity.status;
+
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -102,6 +104,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<Employee> records = page.getResult();
 
         return new PageResult(total, records);
+    }
+
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        //链式注入对象
+        Employee employee=Employee.builder()
+                .status(status)
+                .id(id)
+                .build();
+        employeeMapper.update(employee);
     }
 
 }
