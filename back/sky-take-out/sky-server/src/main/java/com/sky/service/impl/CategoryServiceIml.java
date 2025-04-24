@@ -34,17 +34,17 @@ public class CategoryServiceIml implements CategoryService {
         //拷贝对象
         BeanUtils.copyProperties(categoryDTO, category);
 
-        //设置创建时间
-        category.setCreateTime(LocalDateTime.now());
-
-        //设置更新时间
-        category.setUpdateTime(LocalDateTime.now());
-
-        //设置创建人
-        category.setCreateUser(BaseContext.getCurrentId());
-
-        //设置修改人
-        category.setUpdateUser(BaseContext.getCurrentId());
+//        //设置创建时间
+//        category.setCreateTime(LocalDateTime.now());
+//
+//        //设置更新时间
+//        category.setUpdateTime(LocalDateTime.now());
+//
+//        //设置创建人
+//        category.setCreateUser(BaseContext.getCurrentId());
+//
+//        //设置修改人
+//        category.setUpdateUser(BaseContext.getCurrentId());
 
         //设置状态
         category.setStatus(1);
@@ -79,11 +79,11 @@ public class CategoryServiceIml implements CategoryService {
         //拷贝对象
         BeanUtils.copyProperties(categoryDTO, category);
 
-        //设置更新时间
-        category.setUpdateTime(LocalDateTime.now());
-
-        //设置修改人
-        category.setUpdateUser(BaseContext.getCurrentId());
+//        //设置更新时间
+//        category.setUpdateTime(LocalDateTime.now());
+//
+//        //设置修改人
+//        category.setUpdateUser(BaseContext.getCurrentId());
 
         //更新数据
         categoryMapper.update(category);
